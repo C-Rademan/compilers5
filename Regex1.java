@@ -1,5 +1,5 @@
   // Caron, Litha, Luke
-  // Task1 Regex1: develop a scanner by completing the getSym method - recognise tokens
+  // Task2 Regex1: develop a scanner by completing the getSym method - recognise tokens
 
   // This is a skeleton program for developing a parser for Regular Expressions
   // P.D. Terry, Rhodes University; Modified by KL Bradshaw 2023

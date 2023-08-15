@@ -1,5 +1,5 @@
-  // Do learn to insert your names and a brief description of
-  // what the program is supposed to do!
+  // Caron, Litha, Luke
+  // Task1 Regex1: develop a scanner by completing the getSym method - recognise tokens
 
   // This is a skeleton program for developing a parser for Regular Expressions
   // P.D. Terry, Rhodes University; Modified by KL Bradshaw 2023
@@ -50,16 +50,16 @@
       noSym        =  0,
       EOFSym       =  1,
       // and others like this (added syms 2-14)
-	  semiSym	   =  2,
+	  semicolonSym =  2,
 	  orSym		   =  3,
 	  dotSym	   =  4,
 	  starSym	   =  5,
 	  questionSym  =  6,
 	  plusSym	   =  7,
-	  lParenSym    =  8,
-	  rParenSym    =  9,
-	  lBrackSym	   =  10,
-	  rBrackSym    =  11,
+	  lparenSym    =  8,
+	  rparenSym    =  9,
+	  lbrackSym	   =  10,
+	  rbrackSym    =  11,
 	  minusSym     =  12,
 	  atomicSym    =  13,
 	  escapedSym   =  14;
@@ -106,15 +106,15 @@
 			symKind = EOFSym;
 			break;
 		  case ';':
-			symKind = semiSym;
+			symKind = semicolonSym;
 			getChar();
 			break;
 		  case '(':
-		    symKind = lParenSym;
+		    symKind = lparenSym;
 			getChar();
 			break;
 		  case ')':
-		    symKind = rParenSym;
+		    symKind = rparenSym;
 			getChar();
 			break;
 		  case '|':
@@ -142,11 +142,11 @@
 			getChar();
 			break;
 		  case '[':
-		    symKind = lBrackSym;
+		    symKind = lbrackSym;
 			getChar();
 			break;
 		  case ']':
-		    symKind = rBrackSym;
+		    symKind = rbrackSym;
 			getChar();
 			break;
 		  //build up an escaped character
@@ -169,8 +169,8 @@
 			getChar();
 			symLex.append(ch);
 			if (ch != '\''){
-				symLex.append(ch);
 				getChar();
+				symLex.append(ch);
 				if (ch== '\''){
 					symKind = escapedSym;
 					getChar();
